@@ -11,15 +11,15 @@ namespace tristan {
         using coroutine_handle = std::coroutine_handle< promise_type >;
         ResumableCoroutine(coroutine_handle handle);
 
-        ResumableCoroutine(const ResumableCoroutine &other) = default;
+        ResumableCoroutine(const ResumableCoroutine &other);
 
-        ResumableCoroutine(ResumableCoroutine &&other) = default;
+        ResumableCoroutine(ResumableCoroutine &&other) noexcept;
 
-        ResumableCoroutine &operator=(const ResumableCoroutine &other) = default;
+        ResumableCoroutine &operator=(const ResumableCoroutine &other);
 
-        ResumableCoroutine &operator=(ResumableCoroutine &&other) = default;
+        ResumableCoroutine &operator=(ResumableCoroutine &&other) noexcept;
 
-        ~ResumableCoroutine() = default;
+        ~ResumableCoroutine();
 
         bool resume();
 
