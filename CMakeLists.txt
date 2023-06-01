@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 option(BUILD_SHARED "" ON)
 option(BUILD_STATIC "" OFF)
 option(GENERATE_DEB_PACKAGE "" OFF)
+option(ENABLE_ASAN "Enables asan build. Works only with clang and in debug build" OFF)
 
 if (${BUILD_STATIC})
     message(STATUS "Static library is enabled - switching off shared one")
