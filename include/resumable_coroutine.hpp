@@ -3,13 +3,13 @@
 #include <exception>
 #include <coroutine>
 
-namespace tristan {
+namespace mt {
 
     class ResumableCoroutine {
     public:
         struct promise_type;
         using coroutine_handle = std::coroutine_handle< promise_type >;
-        ResumableCoroutine(coroutine_handle handle);
+        explicit ResumableCoroutine(coroutine_handle handle);
 
         ResumableCoroutine(const ResumableCoroutine &other);
 
@@ -22,8 +22,6 @@ namespace tristan {
         ~ResumableCoroutine();
 
         bool resume();
-
-    protected:
 
     private:
         coroutine_handle m_handle;
