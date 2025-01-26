@@ -21,7 +21,7 @@ namespace mt {
 
         ~ResumableCoroutine();
 
-        bool resume();
+        bool resume() const;
 
     private:
         coroutine_handle m_handle;
