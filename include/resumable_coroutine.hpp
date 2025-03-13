@@ -9,7 +9,7 @@ namespace mt {
     public:
         struct promise_type;
         using coroutine_handle = std::coroutine_handle< promise_type >;
-        explicit ResumableCoroutine(coroutine_handle handle);
+        ResumableCoroutine(coroutine_handle handle);
 
         ResumableCoroutine(const ResumableCoroutine &other);
 
