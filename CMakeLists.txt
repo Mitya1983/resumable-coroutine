@@ -76,7 +76,7 @@ if (NOT ${PROJECT_IS_TOP_LEVEL})
     if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         add_compile_definitions(MT_DEBUG)
     endif ()
-    set(RESUMABLE_COROUTINE_LIBRARY_DIR ${LIBRARY_INSTALL_DIR} PARENT_SCOPE)
+    set(RESUMABLE_COROUTINE_LIB_DIR ${LIBRARY_INSTALL_DIR} PARENT_SCOPE)
     set(RESUMABLE_COROUTINE_INCLUDE_DIR ${INCLUDE_INSTALL_DIR} PARENT_SCOPE)
 endif ()
 
@@ -119,16 +119,5 @@ set_target_properties(
         VERSION ${LIB_VERSION}
         OUTPUT_NAME ${PROJECT_NAME}
 )
-if (BUILD_DOCS)
-    find_package(Doxygen REQUIRED doxygen)
-    set(DOXYGEN_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Docs)
-    set(DOXYGEN_GENERATE_HTML YES)
-    set(DOXYGEN_GENERATE_LATEX NO)
-    set(DOXYGEN_SORT_MEMBER_DOCS NO)
-    doxygen_add_docs(
-            doxygen
-            ${PROJECT_SOURCE_DIR}/inc
-            ALL
-    )
-endif ()
+
 

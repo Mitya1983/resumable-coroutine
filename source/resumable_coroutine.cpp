@@ -1,4 +1,4 @@
-#include "resumable-coroutine/include/resumable_coroutine.hpp"
+#include "include/resumable_coroutine.hpp"
 
 mt::ResumableCoroutine::ResumableCoroutine(const coroutine_handle handle) :
         m_handle(handle) {
